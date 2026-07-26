@@ -1,0 +1,344 @@
+/* Navbar Styles */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: -0.5px;
+}
+
+.navbar-brand svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: var(--radius-full);
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+  background-color: rgba(15, 20, 25, 0.08);
+}
+
+.nav-link.active {
+  color: var(--accent);
+  background-color: var(--accent-light);
+}
+
+/* App Container */
+.page-container {
+  padding: 0;
+  flex: 1;
+}
+
+.page-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Tweet Form */
+.tweet-form-card {
+  display: flex;
+  gap: 14px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, #1d9bf0, #805ad5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.tweet-form-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.tweet-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  font-family: inherit;
+  resize: none;
+  padding: 8px 0;
+}
+
+.tweet-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.tweet-form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.tweet-char-count {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.btn-tweet {
+  background-color: var(--accent);
+  color: #ffffff;
+  border: none;
+  padding: 9px 20px;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px rgba(29, 155, 240, 0.25);
+}
+
+.btn-tweet:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(29, 155, 240, 0.35);
+}
+
+.btn-tweet:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Tweet Card */
+.tweet-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.tweet-card {
+  display: flex;
+  gap: 14px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.2s ease;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tweet-card:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+
+.tweet-body {
+  flex: 1;
+}
+
+.tweet-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.tweet-author-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.tweet-author-handle {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+}
+
+.tweet-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+.tweet-footer {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.btn-like {
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  transition: all 0.2s ease;
+}
+
+.btn-like:hover {
+  color: var(--heart-red);
+  background-color: var(--heart-bg);
+}
+
+.btn-like.liked {
+  color: var(--heart-red);
+}
+
+.btn-like.liked svg {
+  fill: var(--heart-red);
+  transform: scale(1.15);
+}
+
+.btn-like svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Empty State */
+.empty-tweets {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-secondary);
+}
+
+.empty-tweets-icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+/* Profile Component */
+.profile-card {
+  border-bottom: 1px solid var(--border);
+}
+
+.profile-banner {
+  height: 140px;
+  background: linear-gradient(135deg, #1d9bf0 0%, #7928ca 50%, #ff0080 100%);
+  position: relative;
+}
+
+.profile-info {
+  padding: 0 20px 20px;
+  position: relative;
+}
+
+.profile-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, #1d9bf0, #38ef7d);
+  border: 4px solid var(--bg-primary);
+  margin-top: -45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.profile-details {
+  margin-top: 12px;
+}
+
+.profile-name {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.profile-handle {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.profile-bio {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.profile-stats {
+  display: flex;
+  gap: 20px;
+}
+
+.stat-item {
+  display: flex;
+  gap: 6px;
+  font-size: 0.9rem;
+}
+
+.stat-value {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.stat-label {
+  color: var(--text-secondary);
+}
+
